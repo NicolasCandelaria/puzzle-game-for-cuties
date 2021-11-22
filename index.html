@@ -1,30 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript Puzzle Game</title>
-    <link rel="stylesheet" href="main.css" />
-    <script src="scripts.js" async></script>
-  </head>
-  <body onload="main()">
-    <canvas id="myCanvas"></canvas>
-    <div id="menuItems">
-        <div id="menu">
-            <div id="controls">
-                Difficulty <select id="difficulty" onchange="setDifficulty()">
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                    <option value="insane">Bruh</option>
-                </select>
-                <br>
-                <br>
-                <button onclick="restart()">Start</button>
-            </div>
-        </div>
-    </div>
-    <div id="time"></div>
-  </body>
+<html>
+	<head>
+		<title> Puzzle Cam </title>
+		<script src="scripts.js"></script>
+		<link href="main.css" rel="stylesheet"/>
+	</head>
+	
+	<body onload="main()">
+		<canvas id="myCanvas"></canvas>
+		<canvas id="helperCanvas" style="display:none;"></canvas>
+		<div id="menuItems" class="menu">
+			<div id="menu">
+				<div id="controls">
+					<img src='title.png' style='width:90%;'/>
+					<br>
+					<br>
+					Difficulty <select id="difficulty" onchange="setDifficulty()">
+						<option value="easy">Easy</option>
+						<option value="medium">Medium</option>
+						<option value="hard">Hard</option>
+						<option value="insane">Bruh</option>
+					</select>
+					<br>
+					<br>
+					<button onclick="restart()">Start</button>
+				</div>
+			</div>
+		</div>
+		
+		<div id="endScreen" class="menu" style="display:none">
+			<img src='title.png' style='width:90%;'/>
+			<br>
+			<br>
+			
+			<div id="scoreValue"></div>
+			<input type="text" id="name" placeholder="your name"></input>
+			<button onclick="saveScore()" id="saveBtn">Save</button>
+			<br>
+			<br>
+			<button onclick="showScores()">Show Scores</button>
+			<button onclick="showMenu()">Menu</button>
+		</div>
+		
+		<div id="scoresScreen" class="menu" style="display:none">
+			<img src='title.png' style='width:90%;'/>
+			<br>
+			<br>
+			
+			<div id="scoresContainer"></div>
+			<br>
+			<button onclick="closeScores()">Back</button>
+		</div>
+		
+		
+		<div id="time"></div>
+	</body>
 </html>

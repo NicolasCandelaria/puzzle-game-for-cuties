@@ -5,7 +5,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#menuItems {
+.menu {
+  width: 80vmin;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -26,23 +27,40 @@ button {
   border: none;
   border-radius: 1vmin;
 }
-
 button:hover {
   background: orange;
   color: black;
 }
 
+button:disabled {
+  background: lightgray;
+  color: gray;
+  cursor: default;
+}
+
 select {
   font-size: 7vmin;
   cursor: pointer;
-  border-radius: 1vmin;
   border: none;
+  border-radius: 1vmin;
   outline: none;
 }
 
 #time {
   position: absolute;
-  top: 8%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
+}
+
+#scoresContainer {
+  height: 43vh;
+  overflow: auto;
+}
+
+input {
+  font-size: 7vmin;
+  border-radius: 1vmin;
+  width: 50%;
+  text-align: center;
 }
